@@ -1,0 +1,16 @@
+.header{
+
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
+}
+.menuItemLeft{
+color:white
+}
+.menuItemRight{
+color:white;
+}
+.menuItemImg{
+
+}

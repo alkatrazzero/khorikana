@@ -1,0 +1,20 @@
+.container{
+
+}
+.products_row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.product_card{
+    /*box-shadow:10px 5px 5px teal;*/
+    overflow:hidden;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 30px;
+
+}
+.productCard_container{
+    width: 400px;
+}

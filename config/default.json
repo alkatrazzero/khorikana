@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "mongoUri": "mongodb+srv://khorikana:khorikana1@cluster0.picry.mongodb.net/khorikana?retryWrites=true&w=majority",
+  "jwtSecret": "",
+  "baseUrl": "http://localhost:5000"
+}

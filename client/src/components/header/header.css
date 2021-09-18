@@ -1,0 +1,32 @@
+.headerWrapper{
+   margin: 0 50px;
+}
+.title{
+  display: flex;
+   justify-content: center;
+   margin-bottom: 25px;
+    font-size: 30px;
+
+
+}
+.content{
+}
+.navMenu{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 65px;
+
+}
+.active:focus{
+    color:yellow;
+}
+.active:hover{
+    color:yellow;
+}
+.active{
+    color:yellow;
+}
+
+.div a
+{color:white}

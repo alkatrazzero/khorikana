@@ -1,0 +1,28 @@
+.comments_row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.comment{
+    /*margin: 0 10px;*/
+    border: 1px solid black;
+    border-radius: 40px;
+    max-width: 600px;
+
+}
+.wrapper{
+
+}
+
+.comments{
+    margin:0 10px
+
+}
+.commentInput__title{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 20px;}

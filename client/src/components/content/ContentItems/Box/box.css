@@ -1,0 +1,16 @@
+.productsInBox_row{
+    display: flex;
+    justify-content: center;
+    border: 5px solid black;
+    flex-wrap: wrap;
+}
+.boxContainer{
+    border: 5px solid black;
+}
+.submitButton_row{
+    display: flex;
+    justify-content: center;
+}
+.card_container{
+    margin :10px
+}
