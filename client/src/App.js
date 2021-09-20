@@ -6,13 +6,14 @@ import Content from "./components/content/Content";
 import {Footer} from "./components/footer/Footer";
 import {useDispatch} from "react-redux";
 import {getAllProducts} from "./store/productsReduser";
+import {getOrders} from "./store/orders";
 
 
 
 const App = (props) => {
   const dispatch=useDispatch()
-  dispatch(getAllProducts)
   useEffect(()=>{
+    dispatch(getOrders())
     dispatch(getAllProducts())
 
   },[])

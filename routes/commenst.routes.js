@@ -7,7 +7,7 @@ router.post(
   '/addComment',
   async (req, res) => {
     try {
-console.log(req.body.value)
+
       const comment = new Comment({
         comment:req.body.value
       })

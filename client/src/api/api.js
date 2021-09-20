@@ -27,5 +27,11 @@ export const productAPI= {
 export const orderAPI={
   newOrder(order,product){
     return axios.post('/api/order/newOrder',{order,product})
+  },
+  getOrders(){
+    return axios.get('/api/order/getOrders')
+  },
+  deleteOrder(id){
+    return axios.delete(`/api/order/deleteOrder/${id}`)
   }
 }

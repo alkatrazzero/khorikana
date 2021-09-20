@@ -1,4 +1,4 @@
-import {commentsAPI, productsAPI} from "../api/api";
+import {commentsAPI} from "../api/api";
 
 const SET_ALL_COMMENTS = "SET_ALL_COMMENTS"
 const SET_COMMENT = "SET_COMMENT"

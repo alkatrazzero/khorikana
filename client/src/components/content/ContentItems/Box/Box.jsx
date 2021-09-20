@@ -21,9 +21,13 @@ const Box = (props) => {
             <Meta title={p.name} description={p.price
             }/>
             <div> {p.aboutProduct}</div>
+
             <Button onClick={() => dispatch(removeFromBox(p))}>Удалить из корзины</Button>
           </Card></div>
+
         ))}
+        <div>Сумма заказа:</div>
+
       </div>
       <div className={"submitButton_row"}>
         <ConfirmModalWindow/>

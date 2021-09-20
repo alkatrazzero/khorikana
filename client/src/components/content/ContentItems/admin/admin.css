@@ -1,0 +1,24 @@
+.admin__row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.admin_orderStatistic{
+
+}
+.admin__addProductForm{
+    width: 700px;
+    min-width: 300px;
+}
+.adminContainer{
+margin: 0 45px
+}
+.order_card{
+    border: 1px solid black;
+    margin: 10px;
+}
+.order_row{
+    display: flex;
+flex-wrap: wrap;
+/*width: 50%*/
+}

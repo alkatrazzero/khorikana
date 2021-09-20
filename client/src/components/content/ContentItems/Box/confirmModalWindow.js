@@ -48,16 +48,16 @@ export const ConfirmModalWindow = () => {
       onCancel={handleCancel}
     >
       <Form name="nest-messages" onFinish={onFinish}>
-        <Form.Item name={['order', 'name']} label="Ваше имя" rules={[{required: true}]}>
+        <Form.Item name={[ 'name']} label="Ваше имя" rules={[{required: true}]}>
           <Input/>
         </Form.Item>
-        <Form.Item name={['order', 'email']} label="Email" rules={[{type: 'email'}]}>
+        <Form.Item name={[ 'email']} label="Email" rules={[{type: 'email'}]}>
           <Input/>
         </Form.Item>
-        <Form.Item name={['order', 'phone']} label="Номер телефона" rules={[{required: true}]}>
+        <Form.Item name={[ 'phone']} label="Номер телефона" rules={[{required: true}]}>
           <Input/>
         </Form.Item>
-        <Form.Item name={['order', 'introduction']} label="Пожелания к заказу">
+        <Form.Item name={['introduction']} label="Пожелания к заказу">
           <Input.TextArea/>
         </Form.Item>
         <Form.Item>

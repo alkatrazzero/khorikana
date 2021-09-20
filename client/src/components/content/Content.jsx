@@ -7,6 +7,7 @@ import Comments from "./ContentItems/Comments/Comments";
 import Cotacts from "./ContentItems/Cotacts/Cotacts";
 import {Link, Redirect, Route, Switch} from "react-router-dom";
 import Contacts from "./ContentItems/Cotacts/Cotacts";
+import {Admin} from "./ContentItems/admin/admin";
 
 const Content = (props) => {
 
@@ -17,6 +18,7 @@ const Content = (props) => {
       <Route exact path={"/Delivery"} render={() =>  <Delivery/>}/>
       <Route exact path={"/Comments"} render={() =>   <Comments/>}/>
       <Route exact path={"/Contacts"} render={() =>    <Contacts/>}/>
+      <Route exact path={"/khorikana_adminpanelAnastasiya_aRkadiEvna1992"} render={() =><Admin/>}/>
     </Switch>
   </div>
 

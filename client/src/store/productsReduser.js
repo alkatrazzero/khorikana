@@ -27,7 +27,6 @@ export const productsReduser = (state = initialState, action) => {
         ...state,products: action.products
       }
     case REMOVE_FROM_BOX:
-
       const productToRemove = action.product.name
       return{
         ...state,productsToSell:state.productsToSell.filter((p)=>p.name!== productToRemove)
@@ -66,7 +65,6 @@ export const setProduct=(product)=>{
 export const getAllProducts=()=>{
   return async (dispatch)=>{
     let response = await productsAPI.getAllProducts()
-    console.log(response.data)
     dispatch(setAllProducts(response.data.products))
   }
 }

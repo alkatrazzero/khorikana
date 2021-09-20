@@ -10,7 +10,7 @@ router.post(
   // upload.single('avatar'),
   async (req, res) => {
     try {
-      // console.log(req.body)
+
       const product = new Product(req.body)
       await product.save()
       res.status(200).json({product})
