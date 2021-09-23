@@ -30,9 +30,10 @@ export const setComments = (comments) => {
 export const setComment = (comment) => {
   return {type: SET_COMMENT, comment}
 }
-export const getComment = (comment) => {
+export const getComment = ({value,newNow}) => {
   return async (dispatch) => {
-    let response = await commentsAPI.setComment(comment)
+    console.log({value,newNow})
+    let response = await commentsAPI.setComment({value,newNow})
     dispatch(setComment(response.comment))
   }
 }

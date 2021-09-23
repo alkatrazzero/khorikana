@@ -7,9 +7,9 @@ router.post(
   '/addComment',
   async (req, res) => {
     try {
-
       const comment = new Comment({
-        comment:req.body.value
+        comment:req.body.value,
+        newNow:req.body.newNow
       })
       await comment.save()
       res.status(200).json({comment})

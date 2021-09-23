@@ -5,6 +5,7 @@ const ADD_PRODUCT_TO_SELL="ADD_PRODUCT_TO_SELL"
 const SET_ALL_PRODUCTS="SET_ALL_PRODUCTS"
 const REMOVE_FROM_BOX="REMOVE_FROM_BOX"
 const CLEAR_BOX="CLEAR_BOX"
+const SET_PRODUCTS_TO_SELL="SET_PRODUCTS_TO_SELL"
 let initialState = {
   products:[],
   productsToSell:[]
@@ -36,6 +37,10 @@ export const productsReduser = (state = initialState, action) => {
       return{
         ...state,productsToSell:action.clear
       }
+    case SET_PRODUCTS_TO_SELL:
+      return{
+        ...state,productsToSell:action.products
+      }
 
     default:
       return state
@@ -55,6 +60,9 @@ export const addProductToSell=(product)=>{
 }
 export const clearBox=(clear)=>{
   return {type:CLEAR_BOX,clear}
+}
+export const setProductsToSell=(products)=>{
+  return {type:SET_PRODUCTS_TO_SELL,products}
 }
 export const setProduct=(product)=>{
   return async (dispatch)=>{

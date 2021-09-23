@@ -3,8 +3,8 @@ import axios from "axios";
 //api calls for autorization
 export const authAPI = {}
 export const commentsAPI = {
-  setComment(comment) {
-    return axios.post('/api/comments/addComment', comment).then((res) => {
+  setComment({value,newNow}) {
+    return axios.post('/api/comments/addComment', {value,newNow}).then((res) => {
       return res.data
     })
   },

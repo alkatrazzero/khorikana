@@ -1,5 +1,5 @@
 import React from "react"
-import {Button, Form, InputNumber, Input, Upload} from "antd";
+import {Button, Form, InputNumber, Input, Upload, Image} from "antd";
 import {UploadOutlined} from "@ant-design/icons";
 import {useDispatch, useSelector} from "react-redux";
 import {addProductToSell, setProduct} from "../../../store/productsReduser";
@@ -13,13 +13,13 @@ const Showcase = (props) => {
 
 
   return <div className={"headerWrapper"}>
-    <div className={"container"}>
+    <div className={"containerFooter"}>
       <div className={"products_row"}>
 
-        {products.length > 0 && products.map((p => <div className={"productCard_container"}> <Card className={"product_card"}
+        {products.length > 0 && products.map((p => <div className={"productCard_container"}> <Card width={400} className={"product_card"}
                                                               hoverable
                                                               style={{width: 240}}
-            // cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+              cover={<Image  alt="" src={"../../../"+ p.product.photo.file.response.url} />}
           >
             <Meta title={p.product.name} description={p.product.price
             }/>
