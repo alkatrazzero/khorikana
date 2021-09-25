@@ -1,7 +1,9 @@
 import React from "react"
 import Showcase from "./showcase/ShowCase";
 
-export const Footer =()=>{
+export const Footer = () => {
 
-  return    <Showcase/>
+  return <div className={"footer"}>
+    <Showcase/>
+  </div>
 }

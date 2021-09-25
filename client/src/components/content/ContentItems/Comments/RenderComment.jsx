@@ -27,7 +27,7 @@ export const RenderComment = () => {
                      }
                      content={<div>
                        <p style={{fontSize:10}}>{c.newNow}</p>
-                       <p>
+                       <p style={{width:300 ,height:200}}>
                          {c.comment}
                        </p>
                      </div>

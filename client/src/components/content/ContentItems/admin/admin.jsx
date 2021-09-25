@@ -1,17 +1,18 @@
 import React, {useEffect, useState} from "react"
 import {Button, Form, Image, Input, InputNumber, Upload} from "antd";
 import {UploadOutlined} from "@ant-design/icons";
-import { setProduct} from "../../../../store/productsReduser";
+import {setProduct} from "../../../../store/productsReduser";
 import {useDispatch, useSelector} from "react-redux";
 import "./admin.css"
-import { getOrders} from "../../../../store/orders";
+import {getOrders} from "../../../../store/orders";
 import {orderAPI} from "../../../../api/api";
+
 const props1 = {
 
   name: "filedata",
   action: '/api/products/upload',
-  method:"post",
-  encType:"multipart/form-data"
+  method: "post",
+  encType: "multipart/form-data"
 
 }
 const layout = {
@@ -22,17 +23,18 @@ const layout = {
 export const Admin = () => {
   const dispatch = useDispatch()
   const orders = useSelector(state => state.ordersPage.orders)
-  const [edit,setEdit]=useState(false)
-  const[deleted,setDeleted]=useState()
-const deleteCurrentOrder=async (id)=>{
-  await orderAPI.deleteOrder(id)
-}
-useEffect( ()=>{
- dispatch( getOrders())
-},[deleted])
+  const [edit, setEdit] = useState(false)
+  const [deleted, setDeleted] = useState()
+  const deleteCurrentOrder = async (id) => {
+    await orderAPI.deleteOrder(id)
+  }
+  useEffect(() => {
+    dispatch(getOrders())
+    console.log(deleted)
+  }, [deleted])
   const onFinish = (values) => {
     setEdit(false)
-    console.log( values)
+    console.log(values)
     dispatch(setProduct(values))
   };
   return <div>
@@ -40,19 +42,20 @@ useEffect( ()=>{
       <div className={"admin__row"}>
         <div className={"admin_orderStatistic"}>
           <div>СТАТИСТИКА</div>
-          <div className={"order_row"} >
+          <div className={"order_row"}>
             {orders && orders.order.map((o => <div className={"order_card"}>
-              <Button onClick={ ()=>{
+              <Button onClick={async () => {
                 setDeleted(true)
-                deleteCurrentOrder(o._id)
-                setDeleted(false)
+                await deleteCurrentOrder(o._id)
+                await setDeleted(false)
 
 
-              }}>delete</Button>
+              }
+              }>delete</Button>
               <div>Данные покупателя:
-              <div>Имя покупателя: {o.order.name}</div>
-              <div>Номер телефона: {o.order.phone}</div>
-              <div>Пожелание к заказу: {o.order.introduction}</div>
+                <div>Имя покупателя: {o.order.name}</div>
+                <div>Номер телефона: {o.order.phone}</div>
+                <div>Пожелание к заказу: {o.order.introduction}</div>
               </div>
               <div> Заказ: <div> {o.product.map(p => <div>
                 <div> Название товара: {p.name}</div>
@@ -66,32 +69,34 @@ useEffect( ()=>{
 
 
         <div className={"admin__addProductForm"}>
-          {!edit?<Button onClick={()=>{setEdit(true)}}>Добавить товар</Button>:
+          {!edit ? <Button onClick={() => {
+              setEdit(true)
+            }}>Добавить товар</Button> :
             <div>
-          <Form  {...layout} name="nest-messages" onFinish={onFinish}>
-            <Form.Item name={['product', 'name']} label="Название товара" rules={[{required: true}]}>
-              <Input/>
-            </Form.Item>
-            <Form.Item name={['product', 'category']} label="Категория">
-              <Input/>
-            </Form.Item>
-            <Form.Item name={['product', 'aboutProduct']} label="О товаре">
-              <Input.TextArea/>
-            </Form.Item>
-            <Form.Item type={"number"} name={['product', 'price']} label="Цена"  >
-              <InputNumber/>
-            </Form.Item>
-            <Form.Item name={['product', 'photo']} label="Фотография">
-              <Upload {...props1} >
-                <Button icon={<UploadOutlined/>}>Загрузка картинки</Button>
-              </Upload>
-            </Form.Item>
-            <Form.Item wrapperCol={{...layout.wrapperCol, offset: 8}}>
-              <Button type="primary" htmlType="submit">
-                добавить товар
-              </Button>
-            </Form.Item>
-          </Form>
+              <Form  {...layout} name="nest-messages" onFinish={onFinish}>
+                <Form.Item name={['product', 'name']} label="Название товара" rules={[{required: true}]}>
+                  <Input/>
+                </Form.Item>
+                <Form.Item name={['product', 'category']} label="Категория">
+                  <Input/>
+                </Form.Item>
+                <Form.Item name={['product', 'aboutProduct']} label="О товаре">
+                  <Input.TextArea/>
+                </Form.Item>
+                <Form.Item type={"number"} name={['product', 'price']} label="Цена">
+                  <InputNumber/>
+                </Form.Item>
+                <Form.Item name={['product', 'photo']} label="Фотография">
+                  <Upload {...props1} >
+                    <Button icon={<UploadOutlined/>}>Загрузка картинки</Button>
+                  </Upload>
+                </Form.Item>
+                <Form.Item wrapperCol={{...layout.wrapperCol, offset: 8}}>
+                  <Button type="primary" htmlType="submit">
+                    добавить товар
+                  </Button>
+                </Form.Item>
+              </Form>
 
             </div>
           }

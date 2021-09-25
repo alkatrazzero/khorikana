@@ -34,6 +34,7 @@ router.delete(
   async (req, res) => {
     try {
      await Order.findByIdAndDelete(req.params.id)
+      res.status(200).json({message:"success"})
     } catch (e) {
       console.log(e);
       res.status(500).json({message: 'something wrong'})

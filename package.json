@@ -1,5 +1,5 @@
 {
-  "name": "pokedex_mongo_express",
+  "name": "korikana",
   "version": "1.0.0",
   "description": "mern",
   "main": "app.js",
@@ -34,3 +34,4 @@
     "nodemon": "^2.0.12"
   }
 }
+

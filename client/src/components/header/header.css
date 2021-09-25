@@ -15,8 +15,13 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 65px;
-
+    margin-bottom: 65px
+}
+.navMenu a{
+    color:black
+}
+.navMenu a:hover{
+    color:yellow;
 }
 .active:focus{
     color:yellow;

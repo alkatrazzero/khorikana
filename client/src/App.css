@@ -1,16 +1,29 @@
-.header{
+.header {
 
     position: fixed;
     z-index: 1;
     width: 100%;
 
 }
-.menuItemLeft{
-color:white
-}
-.menuItemRight{
-color:white;
-}
-.menuItemImg{
 
+.menuItemLeft {
+    color: white
+}
+
+.menuItemRight {
+    color: white;
+}
+
+.menuItemImg {
+}
+.app_wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.main {
+    flex: 1 1 auto;
+}
+.footer{
+    /*flex: 0 0 auto;*/
 }
