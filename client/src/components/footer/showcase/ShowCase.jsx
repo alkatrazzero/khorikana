@@ -1,25 +1,38 @@
-import React from "react"
-import {Button,Image} from "antd";
+import React, {useState} from "react"
+import {Button, Image} from "antd";
 
 import {useDispatch, useSelector} from "react-redux";
 import {addProductToSell} from "../../../store/productsReduser";
 import {Card} from 'antd';
 import "./ShowCaseStyle.css"
+
 const {Meta} = Card;
 
 const Showcase = (props) => {
+  const editProductsStatus=useSelector(state => state.productsPage.editProductsStatus)
   const products = useSelector(state => state.productsPage.products)
   const dispatch = useDispatch()
+  const [visible, setVisible] = useState(false);
 
-
-  return <div >
+  return <div>
     <div className={"containerFooter"}>
       <div className={"products_row"}>
-        {products.length > 0 && products.map((p => <div className={"productCard_container"}> <Card width={400} className={"product_card"}
-                                                              hoverable
-                                                              style={{width: 240}}
-              cover={<Image  alt="" src={"../../../"+ p.product.photo.file.response.url} />}
+        {products.length > 0 && products.map((p => <div className={"productCard_container"}><Card width={400}
+                                                                                                  className={"product_card"}
+                                                                                                  hoverable
+                                                                                                  style={{width: 240}}
+                                                                                                  cover={<Image
+                                                                                                    preview={{visible: false}}
+                                                                                                    onClick={() => setVisible(true)}
+                                                                                                    alt=""
+                                                                                                    src={"../../../" + p.product.photo.file.response.url}/>}
           >
+          <div style={{ display: 'none' }}>
+            <Image.PreviewGroup preview={{visible, onVisibleChange: vis => setVisible(vis)}}>
+              {p.product.photo.fileList.map((r) => <Image src={"../../../"+r.response.url}/>)}
+            </Image.PreviewGroup>
+          </div>
+            {editProductsStatus&&<Button>РЕДАКТИРОВАТЬ</Button>}
             <Meta title={p.product.name} description={p.product.price
             }/>
             <div> {p.product.aboutProduct}</div>
@@ -28,9 +41,6 @@ const Showcase = (props) => {
         ))}
       </div>
     </div>
-
-
-
 
 
   </div>

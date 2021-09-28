@@ -21,13 +21,13 @@
     color:black
 }
 .navMenu a:hover{
-    color:yellow;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 .active:focus{
     color:yellow;
 }
 .active:hover{
-    color:yellow;
 }
 .active{
     color:yellow;

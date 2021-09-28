@@ -1,14 +1,33 @@
-.productsInBox_row{
+.productsInBox_row {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.boxContainer{
+.card_container{
+    margin: 0 10px;
 }
-.submitButton_row{
+
+.box_form{
     display: flex;
     justify-content: center;
+
 }
-.card_container{
-    margin :10px
+.confitmForm{
+    margin: 0 20px;
+    min-width: 700px;
+}
+.confirm_button{
+    display:flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 715px) {
+    .confitmForm{
+        min-width: 500px;
+    }
+}
+@media (max-width: 430px) {
+    .confitmForm{
+        min-width: 300px;
+    }
 }

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
-import {Button, Form, Image, Input, InputNumber, Upload} from "antd";
+import {Button, Form, Image, Input, InputNumber, Switch, Upload} from "antd";
 import {UploadOutlined} from "@ant-design/icons";
-import {setProduct} from "../../../../store/productsReduser";
+import {setEditProducts, setProduct} from "../../../../store/productsReduser";
 import {useDispatch, useSelector} from "react-redux";
 import "./admin.css"
 import {getOrders} from "../../../../store/orders";
@@ -37,6 +37,10 @@ export const Admin = () => {
     console.log(values)
     dispatch(setProduct(values))
   };
+
+  function onChange(checked) {
+    dispatch(setEditProducts(checked));
+  }
   return <div>
     <div className={"adminContainer"}>
       <div className={"admin__row"}>
@@ -77,16 +81,16 @@ export const Admin = () => {
                 <Form.Item name={['product', 'name']} label="Название товара" rules={[{required: true}]}>
                   <Input/>
                 </Form.Item>
-                <Form.Item name={['product', 'category']} label="Категория">
+                <Form.Item name={['product', 'category']} label="Категория"  rules={[{required: true}]}>
                   <Input/>
                 </Form.Item>
-                <Form.Item name={['product', 'aboutProduct']} label="О товаре">
+                <Form.Item name={['product', 'aboutProduct']} label="О товаре"  rules={[{required: true}]}>
                   <Input.TextArea/>
                 </Form.Item>
-                <Form.Item type={"number"} name={['product', 'price']} label="Цена">
+                <Form.Item type={"number"} name={['product', 'price']} label="Цена"  rules={[{required: true}]}>
                   <InputNumber/>
                 </Form.Item>
-                <Form.Item name={['product', 'photo']} label="Фотография">
+                <Form.Item name={['product', 'photo']} label="Фотография"  rules={[{required: true}]}>
                   <Upload {...props1} >
                     <Button icon={<UploadOutlined/>}>Загрузка картинки</Button>
                   </Upload>
@@ -100,6 +104,10 @@ export const Admin = () => {
 
             </div>
           }
+        </div>
+        <div>
+        <div>Редактировать товары</div>
+        <Switch defaultChecked={false} onChange={onChange} />
         </div>
       </div>
 

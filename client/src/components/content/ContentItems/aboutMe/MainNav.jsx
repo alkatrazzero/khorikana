@@ -1,8 +1,6 @@
 import React from "react"
 import img from "../../../../assets/img/1.jpeg"
 import "./MainNavStyle.css"
-import {LeftOutlined, RightOutlined} from "@ant-design/icons";
-import {Link} from "react-router-dom";
 import {Image} from "antd";
 
 

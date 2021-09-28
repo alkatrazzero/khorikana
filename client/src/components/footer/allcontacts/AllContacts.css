@@ -1,0 +1,7 @@
+.AllContacts{
+    display: flex;
+    justify-content: center;
+}
+.AllContacts div{
+    margin: 15px 5px;
+}

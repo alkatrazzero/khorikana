@@ -6,9 +6,11 @@ const SET_ALL_PRODUCTS="SET_ALL_PRODUCTS"
 const REMOVE_FROM_BOX="REMOVE_FROM_BOX"
 const CLEAR_BOX="CLEAR_BOX"
 const SET_PRODUCTS_TO_SELL="SET_PRODUCTS_TO_SELL"
+const SET_EDIT_PRODUCTS="SET_EDIT_PRODUCTS"
 let initialState = {
   products:[],
-  productsToSell:[]
+  productsToSell:[],
+  editProductsStatus:false
 }
 
 
@@ -41,10 +43,17 @@ export const productsReduser = (state = initialState, action) => {
       return{
         ...state,productsToSell:action.products
       }
+    case SET_EDIT_PRODUCTS:
+      return{
+        ...state,editProductsStatus:action.status
+      }
 
     default:
       return state
   }
+}
+export const setEditProducts=(status)=>{
+  return {type:SET_EDIT_PRODUCTS,status}
 }
 export const removeFromBox=(product)=>{
   return {type:REMOVE_FROM_BOX,product}

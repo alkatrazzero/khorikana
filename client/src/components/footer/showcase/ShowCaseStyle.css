@@ -10,11 +10,13 @@
 .product_card{
     /*box-shadow:10px 5px 5px teal;*/
     overflow:hidden;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin: 5px auto;
     border-radius: 30px;
+
 
 }
 .productCard_container{
     width: 300px;
+    /*height: 300px;?*/
+
 }

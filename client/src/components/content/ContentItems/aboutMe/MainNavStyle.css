@@ -1,26 +1,31 @@
 .container {
     display: flex;
 }
-.aboutTitle{
+
+.aboutTitle {
     flex-wrap: wrap;
     width: 50%;
 }
-@media (max-width: 975px){
-    .container{
+
+@media (max-width: 975px) {
+    .container {
         flex-wrap: wrap;
-}
-    .aboutTitle{
+    }
+
+    .aboutTitle {
         width: 100%;
     }
 }
-    .container_img {
-        margin-right: 30px;
-}
-    .mainImg{
 
-        min-width: 260px;
-        max-width: 650px;
-    }
+.container_img {
+    padding-right:  20px;
+}
+
+.mainImg {
+
+    min-width: 260px;
+    max-width: 650px;
+}
 
 
 /*975px*/

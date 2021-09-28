@@ -8,6 +8,7 @@ import {ConfirmModalWindow} from "./confirmModalWindow";
 
 
 const Box = (props) => {
+
   const productsToSell = useSelector(state => state.productsPage.productsToSell)
   const dispatch = useDispatch()
   const [success, setSuccess] = useState(false)
@@ -52,14 +53,14 @@ const Box = (props) => {
         {productsToSell.length > 0 && <div>Сумма заказа:{totalPrice}</div>}
 
       </div>
-      <div className={"submitButton_row"}>
-
+      <div className={"submit_from__container"}>
         {success ? <Result
           status="success"
           title="Ваш заказ принят, спасибо"
           extra={[]}
         /> : <ConfirmModalWindow setSucces={setSuccess}/>}
       </div>
+
     </div>
 
 
