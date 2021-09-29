@@ -21,6 +21,9 @@ export const productAPI= {
   },
   getAllProducts() {
     return axios.get('/api/products/getAllProducts')
+  },
+  updateProduct(price,id){
+    return axios.post('/api/products/updateProduct',{price,id})
   }
 
 }

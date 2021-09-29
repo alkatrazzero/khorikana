@@ -52,8 +52,6 @@ export const Admin = () => {
                 setDeleted(true)
                 await deleteCurrentOrder(o._id)
                 await setDeleted(false)
-
-
               }
               }>delete</Button>
               <div>Данные покупателя:
