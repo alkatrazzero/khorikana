@@ -25,7 +25,6 @@ router.post(
 
     try {
       const findProduct = await Product.findOne({_id: req.body.id})
-      console.log(findProduct,'findproduct')
       const productCopy=_.cloneDeep(findProduct)
       productCopy.product.price=req.body.price
       const product=await Product.findOneAndUpdate( {_id: req.body.id}, productCopy)
@@ -48,7 +47,7 @@ router.get(
   }
 )
 router.post("/upload", upload.single("filedata"),
-  async (req, res, next) => {
+  async (req, res) => {
     let filedata = req.file;
     console.log(filedata);
     if (filedata)
